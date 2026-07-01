@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protocolo Mente Activa — Dr. Alejandro Vega</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:        #0f0f0f;
+    --ink-soft:   #3a3a3a;
+    --ink-muted:  #6b6b6b;
+    --gold:       #c9a84c;
+    --gold-light: #f0d98a;
+    --gold-dim:   #7a6330;
+    --green:      #2d5a3d;
+    --green-light:#eaf3ed;
+    --cream:      #faf8f3;
+    --white:      #ffffff;
+    --danger:     #c0392b;
+    --border:     #e0d9c8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--ink);
+    color: var(--white);
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 76px;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--danger);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .topbar span { color: var(--gold-light); }
+
+  /* ── ALERT BANNER ── */
+  .alert-banner {
+    background: #1a0a00;
+    border-bottom: 1px solid var(--gold-dim);
+    padding: 14px 20px;
+    text-align: center;
+  }
+  .alert-banner p { font-size: 13px; color: #c9a060; margin: 0; }
+  .alert-banner strong { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 52px 20px 0;
+    text-align: center;
+  }
+
+  .result-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #1a0000;
+    border: 1px solid var(--danger);
+    color: #e07070;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 5vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.12;
+    color: var(--white);
+    max-width: 780px;
+    margin: 0 auto 20px;
+  }
+  .hero h1 em { font-style: normal; color: var(--gold); }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: #b0a898;
+    max-width: 580px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  /* ── VIDEO ── */
+  .video-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    background: #1a1a1a;
+    border: 1px solid #2e2e2e;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .video-placeholder {
+    aspect-ratio: 16/9;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: #555;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+  }
+  .play-icon {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .play-icon svg { fill: var(--ink); margin-left: 4px; }
+  .video-label {
+    background: #1a1a1a;
+    padding: 10px 20px;
+    font-size: 11px;
+    color: #555;
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── CTA ── */
+  .cta-wrap { text-align: center; padding: 36px 20px; }
+  .cta-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 18px 44px;
+    border-radius: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+  .cta-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .cta-sub { margin-top: 10px; font-size: 12px; color: #555; }
+  .cta-sub span { color: var(--gold); }
+
+  /* ── STICKY CTA ── */
+  .sticky-cta {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: #0d0d0d; border-top: 1px solid var(--gold-dim);
+    padding: 12px 20px;
+    display: flex; align-items: center; justify-content: center; gap: 18px;
+    z-index: 100;
+  }
+  @media (max-width: 480px) { .sticky-cta { flex-direction: column; gap: 6px; } }
+  .sticky-price { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--gold); font-weight: 700; }
+  .sticky-label { font-size: 0.78rem; color: #444; }
+  .sticky-btn {
+    background: var(--gold); color: var(--ink); font-weight: 700;
+    font-size: 0.85rem; padding: 11px 26px; border-radius: 2px;
+    text-decoration: none; text-transform: uppercase; letter-spacing: 0.04em;
+    transition: background 0.2s;
+  }
+  .sticky-btn:hover { background: var(--gold-light); }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  ⚠️ Tu test reveló <span>Alerta Alto</span> — Este protocolo fue creado para tu situación.
+</div>
+
+<!-- ALERT BANNER -->
+<div class="alert-banner">
+  <p>Precio de lanzamiento disponible solo por tiempo limitado. <strong>Después de este video, vuelve a $47.</strong></p>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="result-pill">🔴 Resultado: Alerta Alto</div>
+  <p class="eyebrow">Dr. Alejandro Vega · Instituto de Neurología Funcional</p>
+  <h1>Este <em>"Protocolo de la miel + 2 ingredientes naturales"</em> restaura una memoria perfecta en 21 días.</h1>
+  <p class="hero-sub">Sin medicamentos. Sin suplementos caros. Solo los tres hábitos que los superancianos aplican todos los días para mantener una memoria de acero.</p>
+
+  <!-- VIDEO -->
+  <div class="video-wrap">
+    <div class="video-placeholder">
+      <!-- REEMPLAZA CON TU EMBED DE VIDEO -->
+      <div class="play-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <span>INSERTA TU VIDEO AQUÍ</span>
+    </div>
+    <div class="video-label">🔒 Video exclusivo · Solo disponible para quienes completaron el test</div>
+  </div>
+
+  <div class="cta-wrap">
+    <a href="#LINK_DE_CHECKOUT" class="cta-btn">Quiero el Protocolo — $9.90</a>
+    <p class="cta-sub">Pago único · Acceso inmediato · <span>Garantía de 30 días</span></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#060606;border-top:1px solid #141414;padding:36px 24px;text-align:center;">
+  <p style="font-size:0.76rem;color:#2a2a2a;max-width:580px;margin:0 auto 6px;line-height:1.6;">© 2025 Instituto de Neurología Funcional · Dr. Alejandro Vega</p>
+  <p style="font-size:0.76rem;color:#2a2a2a;max-width:580px;margin:10px auto 0;line-height:1.6;">
+    <a href="#" style="color:#333;text-decoration:none;">Política de Privacidad</a> ·
+    <a href="#" style="color:#333;text-decoration:none;">Términos de Uso</a> ·
+    <a href="#" style="color:#333;text-decoration:none;">Contacto</a>
+  </p>
+  <p style="font-size:0.76rem;color:#2a2a2a;max-width:580px;margin:18px auto 0;line-height:1.6;">Los resultados pueden variar. Este programa no reemplaza el diagnóstico ni el tratamiento médico profesional.</p>
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta">
+  <div>
+    <div class="sticky-label">Precio de lanzamiento</div>
+    <div class="sticky-price">$9.90</div>
+  </div>
+  <a href="#LINK_DE_CHECKOUT" class="sticky-btn">Empezar ahora →</a>
+</div>
+
+</body>
+</html>
