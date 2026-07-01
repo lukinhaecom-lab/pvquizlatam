@@ -184,6 +184,50 @@
     transition: background 0.2s;
   }
   .sticky-btn:hover { background: var(--gold-light); }
+
+  /* ── DIVIDER ── */
+  .divider { max-width: 760px; margin: 0 auto; border: none; border-top: 1px solid #1e1e1e; }
+
+  /* ── SECTIONS ── */
+  .section { max-width: 700px; margin: 0 auto; padding: 64px 24px; }
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 14px; }
+  .section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 700; line-height: 1.2; color: var(--white); margin-bottom: 24px; }
+  .section h2 em { font-style: normal; color: var(--gold); }
+
+  /* ── BONUS ── */
+  .bonus-list { list-style: none; margin: 20px 0; }
+  .bonus-list li { display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid #1a1a1a; }
+  .bonus-list li:last-child { border-bottom: none; }
+  .bonus-icon { font-size: 1.3rem; min-width: 30px; }
+  .bonus-text h4 { font-size: 0.93rem; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+  .bonus-text p { font-size: 0.86rem; color: #666; margin: 0; }
+  .bonus-value { margin-left: auto; font-size: 0.8rem; color: var(--gold-dim); font-weight: 600; white-space: nowrap; }
+
+  /* ── TESTIMONIALS ── */
+  .testi-grid { display: grid; gap: 14px; margin: 28px 0; }
+  .tcard { background: #141414; border: 1px solid #1e1e1e; border-radius: 2px; padding: 26px; }
+  .tcard-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 10px; letter-spacing: 2px; }
+  .tcard p { color: #b0a898; font-style: italic; font-size: 0.95rem; margin-bottom: 14px; }
+  .tcard-author { font-size: 0.8rem; font-weight: 600; color: #444; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  /* ── PRICE BOX ── */
+  .price-box { background: #0d0d0d; border: 1px solid var(--gold-dim); border-radius: 2px; padding: 36px; text-align: center; margin: 36px 0; }
+  .price-original { font-size: 0.88rem; color: #444; text-decoration: line-through; margin-bottom: 4px; }
+  .price-label { font-size: 0.82rem; color: #666; margin-bottom: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .price-main { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 4.8rem); font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+  .price-note { font-size: 0.82rem; color: #444; margin-bottom: 28px; }
+  .price-stack { border-top: 1px solid #1a1a1a; padding-top: 22px; margin-top: 6px; }
+  .price-stack-title { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: #333; margin-bottom: 14px; }
+  .stack-row { display: flex; justify-content: space-between; font-size: 0.86rem; padding: 5px 0; color: #555; }
+  .stack-row span:last-child { color: #333; }
+  .stack-row.total { border-top: 1px solid #1e1e1e; margin-top: 8px; padding-top: 12px; color: #888; font-weight: 600; }
+
+  /* ── GUARANTEE ── */
+  .guarantee-box { display: flex; gap: 22px; align-items: flex-start; background: #111; border: 1px solid #1e1e1e; border-radius: 2px; padding: 28px; margin: 28px 0; }
+  @media (max-width: 480px) { .guarantee-box { flex-direction: column; } }
+  .guarantee-badge { min-width: 68px; width: 68px; height: 68px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 0.72rem; color: var(--ink); text-align: center; line-height: 1.2; flex-shrink: 0; }
+  .guarantee-text h4 { font-size: 0.97rem; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+  .guarantee-text p { font-size: 0.88rem; color: #666; margin: 0; }
 </style>
 </head>
 <body>
@@ -212,9 +256,137 @@
   </div>
 
   <div class="cta-wrap">
-    <a href="#LINK_DE_CHECKOUT" class="cta-btn">Quiero el Protocolo — $9.90</a>
+    <a href="https://lukinhaecom-lab.github.io/pvquizlatam/" class="cta-btn">Quiero el Protocolo — $9.90</a>
     <p class="cta-sub">Pago único · Acceso inmediato · <span>Garantía de 30 días</span></p>
   </div>
+</section>
+
+<hr class="divider">
+
+<!-- BONUS -->
+<section class="section">
+  <p class="section-label">Incluido en tu acceso hoy</p>
+  <h2>Más de <em>$178 en valor.</em> Tuyo por $9.90.</h2>
+
+  <ul class="bonus-list">
+    <li>
+      <div class="bonus-icon">📘</div>
+      <div class="bonus-text">
+        <h4>Protocolo Mente Activa — 3 módulos completos</h4>
+        <p>Videos de 5 a 8 minutos + PDF complementario por módulo. Acceso inmediato y de por vida.</p>
+      </div>
+      <span class="bonus-value">$97</span>
+    </li>
+    <li>
+      <div class="bonus-icon">🍽️</div>
+      <div class="bonus-text">
+        <h4>BONO 1 — Guía de Recetas para la Memoria</h4>
+        <p>11 recetas prácticas que integran los 3 alimentos del protocolo. Ingredientes de cualquier mercado de América Latina.</p>
+      </div>
+      <span class="bonus-value">$27</span>
+    </li>
+    <li>
+      <div class="bonus-icon">✅</div>
+      <div class="bonus-text">
+        <h4>BONO 2 — Lista de Control: Los 7 Hábitos del Superanciano</h4>
+        <p>Checklist diario imprimible para los 21 días. Para pegar en el refrigerador y seguir sin esfuerzo.</p>
+      </div>
+      <span class="bonus-value">$17</span>
+    </li>
+    <li>
+      <div class="bonus-icon">🌙</div>
+      <div class="bonus-text">
+        <h4>BONO 3 — Masterclass: Sueño y Memoria</h4>
+        <p>El ritual nocturno de 10 minutos que regenera la orexina mientras duermes — y por qué sin sueño profundo ningún protocolo alcanza su potencial.</p>
+      </div>
+      <span class="bonus-value">$37</span>
+    </li>
+  </ul>
+</section>
+
+<hr class="divider">
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <p class="section-label">Resultados reales</p>
+  <h2>Lo que dicen quienes <em>ya lo aplicaron.</em></h2>
+
+  <div class="testi-grid">
+    <div class="tcard">
+      <div class="tcard-stars">★★★★★</div>
+      <p>"Pensé que era cosa de la edad y que ya no había remedio. En la segunda semana ya terminaba las conversaciones sin perder el hilo. Al mes mi hija me preguntó qué había hecho diferente. Es como si hubieran encendido una luz dentro de mi cabeza."</p>
+      <div class="tcard-author">Elena R. · 64 años · Ciudad de México</div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-stars">★★★★★</div>
+      <p>"Olvidaba el nombre de mis nietos. Mi esposa estaba preocupada. Después de tres semanas siguiendo el protocolo, volví a recordar cosas que creía perdidas para siempre. Ahora soy yo quien cuenta las historias en la cena."</p>
+      <div class="tcard-author">Carlos M. · 71 años · Bogotá</div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-stars">★★★★★</div>
+      <p>"No podía terminar una conversación sin perderme en el medio. Después de 21 días la niebla desapareció. Mi razonamiento volvió. Me siento yo misma otra vez."</p>
+      <div class="tcard-author">Marta G. · 57 años · Buenos Aires</div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-stars">★★★★★</div>
+      <p>"Comencé medio desconfiado pero en pocos días noté que mi razonamiento estaba más afilado. Recuerdo compromisos sin anotarlos y ya no me bloqueo recordando nombres."</p>
+      <div class="tcard-author">Roberto F. · 68 años · Lima</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PRICE -->
+<section class="section">
+  <p class="section-label">Tu inversión hoy</p>
+  <h2>Menos de lo que gastas en <em>un café esta semana.</em></h2>
+
+  <p style="color:#b0a898;margin-bottom:16px;">Una consulta con un neurólogo privado cuesta entre $150 y $300 dólares. Los suplementos de memoria genéricos, entre $40 y $80 por mes sin garantía de resultado. El Protocolo Mente Activa va mucho más allá — y no te va a costar $200, ni $100, ni $50.</p>
+
+  <div class="price-box">
+    <p class="price-original">Valor total del paquete: $178.00</p>
+    <p class="price-label">Tu precio hoy</p>
+    <div class="price-main">$9.90</div>
+    <p class="price-note">Pago único · Sin mensualidad · Acceso de por vida</p>
+    <a href="https://lukinhaecom-lab.github.io/pvquizlatam/" class="cta-btn" style="display:inline-block;margin-bottom:18px;">Quiero el Protocolo ahora — $9.90</a>
+    <div class="price-stack">
+      <p class="price-stack-title">Lo que incluye tu acceso</p>
+      <div class="stack-row"><span>Protocolo Mente Activa — 3 módulos completos</span><span>$97</span></div>
+      <div class="stack-row"><span>Bono 1 — Guía de Recetas para la Memoria</span><span>$27</span></div>
+      <div class="stack-row"><span>Bono 2 — Lista de Control 7 Hábitos</span><span>$17</span></div>
+      <div class="stack-row"><span>Bono 3 — Masterclass Sueño y Memoria</span><span>$37</span></div>
+      <div class="stack-row total"><span>Total</span><span>$178 → <strong style="color:var(--gold)">$9.90</strong></span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- GUARANTEE -->
+<section class="section">
+  <p class="section-label">Sin riesgo</p>
+  <h2>El riesgo es <em>completamente mío.</em></h2>
+
+  <div class="guarantee-box">
+    <div class="guarantee-badge">30<br>DÍAS<br>GARANTÍA</div>
+    <div class="guarantee-text">
+      <h4>Garantía Incondicional de 30 Días</h4>
+      <p>Aplica el protocolo por 30 días. Si no sientes ninguna diferencia en tu claridad mental, en tu enfoque, en tu memoria — escríbeme y te devuelvo cada centavo. Sin preguntas, sin burocracia, sin demoras. El riesgo es enteramente mío.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FINAL CTA -->
+<section class="section" style="text-align:center;padding-bottom:80px;">
+  <p class="section-label">Última oportunidad</p>
+  <h2>La decisión es tuya. <em>Pero tiene que ser ahora.</em></h2>
+  <p style="max-width:500px;margin:0 auto 28px;color:#555;">Imagina en 21 días despertar con la cabeza despejada. Terminar una conversación sin bloquearte. Recordar el nombre de las personas en el momento. Contar una historia de principio a fin sin perder el hilo.</p>
+  <p style="max-width:500px;margin:0 auto 36px;color:#333;font-size:0.95rem;">Puedes cerrar esta página y seguir exactamente donde estás. O puedes hacer clic abajo y empezar hoy.</p>
+  <a href="https://lukinhaecom-lab.github.io/pvquizlatam/" class="cta-btn">Quiero el Protocolo — $9.90</a>
+  <p class="cta-sub" style="margin-top:14px;">Pago único · Acceso inmediato · <span>Garantía de 30 días</span></p>
 </section>
 
 <!-- FOOTER -->
