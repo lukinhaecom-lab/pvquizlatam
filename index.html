@@ -228,6 +228,11 @@
   .guarantee-badge { min-width: 68px; width: 68px; height: 68px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 0.72rem; color: var(--ink); text-align: center; line-height: 1.2; flex-shrink: 0; }
   .guarantee-text h4 { font-size: 0.97rem; font-weight: 600; color: var(--white); margin-bottom: 6px; }
   .guarantee-text p { font-size: 0.88rem; color: #666; margin: 0; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 </style>
 </head>
 <body>
@@ -255,11 +260,13 @@
     <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/9440c56c-927d-48cc-89b0-e7570bd455d7/players/6a447ad8976dcbcefea46206/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
   </div>
 
-  <div class="cta-wrap">
+  <div class="cta-wrap" id="cta-hero">
     <a href="https://lukinhaecom-lab.github.io/pvquizlatam/" class="cta-btn">Quiero el Protocolo — $9.90</a>
     <p class="cta-sub">Pago único · Acceso inmediato · <span>Garantía de 30 días</span></p>
   </div>
 </section>
+
+<div id="delayed-content" style="display:none;">
 
 <hr class="divider">
 
@@ -388,6 +395,20 @@
   <a href="https://lukinhaecom-lab.github.io/pvquizlatam/" class="cta-btn">Quiero el Protocolo — $9.90</a>
   <p class="cta-sub" style="margin-top:14px;">Pago único · Acceso inmediato · <span>Garantía de 30 días</span></p>
 </section>
+
+</div><!-- /delayed-content -->
+
+<script>
+  // Mostra o CTA e as seções após 180 segundos (3 minutos)
+  setTimeout(function() {
+    // Seções completas
+    var delayed = document.getElementById('delayed-content');
+    if (delayed) {
+      delayed.style.display = 'block';
+      delayed.style.animation = 'fadeIn 0.8s ease';
+    }
+  }, 180000);
+</script>
 
 <!-- FOOTER -->
 <footer style="background:#060606;border-top:1px solid #141414;padding:36px 24px;text-align:center;">
