@@ -1,432 +1,1178 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
- <script type="text/javascript">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>¿Tu cerebro está en riesgo? — Test Cognitivo Gratuito</title>
+<script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xfgzhz6pt1");
+    })(window, document, "clarity", "script", "xfgyyhlmfu");
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Protocolo Mente Activa — Dr. Alejandro Vega</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '940128157930141');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=940128157930141&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --ink:        #0f0f0f;
-    --ink-soft:   #3a3a3a;
-    --ink-muted:  #6b6b6b;
-    --gold:       #c9a84c;
-    --gold-light: #f0d98a;
-    --gold-dim:   #7a6330;
-    --green:      #2d5a3d;
-    --green-light:#eaf3ed;
-    --cream:      #faf8f3;
-    --white:      #ffffff;
-    --danger:     #c0392b;
-    --border:     #e0d9c8;
+    --green:       #2D5A3D;
+    --green-mid:   #3D7A52;
+    --green-light: #EAF3ED;
+    --gold:        #C9A84C;
+    --gold-light:  #FDF6E3;
+    --cream:       #FAFAF5;
+    --white:       #FFFFFF;
+    --ink:         #1A1A1A;
+    --ink-soft:    #3D3D3D;
+    --muted:       #6B6B6B;
+    --border:      #E2DDD4;
+    --red:         #C0392B;
+    --red-light:   #FDECEA;
+    --orange:      #D47A2A;
+    --orange-light:#FEF3E2;
   }
 
   html { scroll-behavior: smooth; }
 
   body {
     font-family: 'Inter', sans-serif;
-    background: var(--ink);
-    color: var(--white);
-    font-size: 17px;
-    line-height: 1.7;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── TOP BAR ── */
-  .topbar {
-    background: var(--danger);
+  /* ── HEADER ── */
+  .site-header {
+    width: 100%;
+    background: var(--green);
+    padding: 10px 12px;
     text-align: center;
-    padding: 10px 20px;
-    font-size: 13px;
+  }
+  .site-header span {
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.04em;
+    color: var(--gold);
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-  }
-  .topbar span { color: var(--gold-light); }
-
-  /* ── ALERT BANNER ── */
-  .alert-banner {
-    background: #1a0a00;
-    border-bottom: 1px solid var(--gold-dim);
-    padding: 14px 20px;
-    text-align: center;
-  }
-  .alert-banner p { font-size: 13px; color: #c9a060; margin: 0; }
-  .alert-banner strong { color: var(--gold); }
-
-  /* ── HERO ── */
-  .hero {
-    background: var(--ink);
-    padding: 52px 20px 0;
-    text-align: center;
+    white-space: nowrap;
   }
 
-  .result-pill {
+  /* ── MAIN CONTAINER ── */
+  .quiz-wrap {
+    width: 100%;
+    max-width: 560px;
+    padding: 24px 16px 60px;
+    flex: 1;
+  }
+
+  /* ── SCREENS ── */
+  .screen { display: none; }
+  .screen.active { display: block; }
+
+  /* ── INTRO SCREEN ── */
+  .intro-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: #1a0000;
-    border: 1px solid var(--danger);
-    color: #e07070;
-    font-size: 12px;
+    gap: 6px;
+    background: var(--gold-light);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 6px 16px;
+    padding: 5px 12px;
     border-radius: 20px;
     margin-bottom: 20px;
   }
 
-  .eyebrow {
+  .intro-headline {
+    font-family: Georgia, serif;
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .intro-headline em {
+    font-style: normal;
+    color: var(--green);
+  }
+
+  .intro-sub {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  .intro-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .stat-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 10px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--green);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    color: var(--muted);
+    line-height: 1.3;
+  }
+
+  .btn-start {
+    width: 100%;
+    background: var(--green);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 18px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .btn-start:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+  .trust-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* ── PROGRESS ── */
+  .progress-area {
+    margin-bottom: 28px;
+  }
+
+  .progress-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .progress-label {
     font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .progress-frac {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--green);
+  }
+
+  .progress-track {
+    width: 100%;
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--green) 0%, var(--gold) 100%);
+    border-radius: 4px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 0%;
+  }
+
+  /* ── BRAIN ICONS ── */
+  .brain-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .brain-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .brain-dot.lit {
+    background: var(--green);
+    transform: scale(1.2);
+  }
+
+  /* ── QUESTION CARD ── */
+  .q-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 24px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    animation: slideIn 0.3s ease;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .q-category {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--gold);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .q-category::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 1px;
+  }
+
+  .q-text {
+    font-family: Georgia, serif;
+    font-size: clamp(1.05rem, 3.5vw, 1.2rem);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 22px;
+  }
+
+  /* ── OPTIONS ── */
+  .options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .option-btn {
+    width: 100%;
+    background: var(--cream);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+    transition: all 0.18s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .option-btn:hover {
+    border-color: var(--green);
+    background: var(--green-light);
+    color: var(--green);
+    transform: translateX(3px);
+  }
+
+  .option-btn.selected {
+    border-color: var(--green);
+    background: var(--green-light);
+    color: var(--green);
+  }
+
+  .option-letter {
+    min-width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    transition: all 0.18s;
+    flex-shrink: 0;
+  }
+
+  .option-btn:hover .option-letter,
+  .option-btn.selected .option-letter {
+    background: var(--green);
+    border-color: var(--green);
+    color: var(--white);
+  }
+
+  /* ── LOADING SCREEN ── */
+  .loading-screen {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .brain-anim {
+    font-size: 3rem;
+    margin-bottom: 24px;
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+  }
+
+  .loading-title {
+    font-family: Georgia, serif;
+    font-size: 1.3rem;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .loading-sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+
+  .loading-bar-track {
+    width: 100%;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
     margin-bottom: 20px;
   }
 
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.9rem, 5vw, 3.4rem);
-    font-weight: 900;
-    line-height: 1.12;
-    color: var(--white);
-    max-width: 780px;
-    margin: 0 auto 20px;
+  .loading-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--green), var(--gold));
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.3s ease;
   }
-  .hero h1 em { font-style: normal; color: var(--gold); }
 
-  .hero-sub {
-    font-size: clamp(1rem, 2vw, 1.15rem);
-    color: #b0a898;
-    max-width: 580px;
-    margin: 0 auto 32px;
+  .loading-step {
+    font-size: 13px;
+    color: var(--muted);
+    min-height: 20px;
+    transition: opacity 0.3s;
+  }
+
+  /* ── RESULT SCREENS ── */
+  .result-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    animation: slideIn 0.5s ease;
+  }
+
+  .result-header {
+    padding: 28px 24px 24px;
+    text-align: center;
+  }
+
+  .result-header.leve    { background: var(--green-light); }
+  .result-header.moderado { background: var(--orange-light); }
+  .result-header.alto    { background: var(--red-light); }
+
+  .result-icon { font-size: 2.8rem; margin-bottom: 12px; }
+
+  .result-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+
+  .result-badge.leve     { background: var(--green); color: var(--white); }
+  .result-badge.moderado { background: var(--orange); color: var(--white); }
+  .result-badge.alto     { background: var(--red); color: var(--white); }
+
+  .result-title {
+    font-family: Georgia, serif;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 0;
+  }
+
+  .result-body {
+    padding: 24px;
+  }
+
+  .result-score-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+  }
+
+  .score-label { font-size: 12px; color: var(--muted); }
+  .score-val {
+    font-family: Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .score-val.leve     { color: var(--green); }
+  .score-val.moderado { color: var(--orange); }
+  .score-val.alto     { color: var(--red); }
+
+  .score-max { font-size: 12px; color: var(--muted); }
+
+  .result-text {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .result-text strong { color: var(--ink); }
+
+  .result-highlight {
+    border-left: 3px solid var(--gold);
+    padding: 14px 16px;
+    background: var(--gold-light);
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: var(--ink-soft);
     line-height: 1.6;
+    font-style: italic;
   }
 
-  /* ── VIDEO ── */
-  .video-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    background: #1a1a1a;
-    border: 1px solid #2e2e2e;
-    border-radius: 4px;
+  /* ── SCORE BAR ── */
+  .score-bars {
+    margin-bottom: 24px;
+  }
+
+  .score-bar-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+
+  .score-bar-track {
+    width: 100%;
+    height: 10px;
+    background: var(--border);
+    border-radius: 5px;
     overflow: hidden;
   }
-  .video-placeholder {
-    aspect-ratio: 16/9;
-    background: #111;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    color: #555;
-    font-size: 13px;
-    letter-spacing: 0.05em;
+
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 0%;
   }
-  .play-icon {
-    width: 60px; height: 60px;
-    border-radius: 50%;
-    background: var(--gold);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .play-icon svg { fill: var(--ink); margin-left: 4px; }
-  .video-label {
-    background: #1a1a1a;
-    padding: 10px 20px;
-    font-size: 11px;
-    color: #555;
-    text-align: center;
-    letter-spacing: 0.04em;
-  }
+
+  .score-bar-fill.leve     { background: var(--green); }
+  .score-bar-fill.moderado { background: var(--orange); }
+  .score-bar-fill.alto     { background: var(--red); }
 
   /* ── CTA ── */
-  .cta-wrap { text-align: center; padding: 36px 20px; }
-  .cta-btn {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--ink);
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    padding: 18px 44px;
-    border-radius: 2px;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: background 0.2s, transform 0.15s;
+  .btn-cta {
+    width: 100%;
+    padding: 18px 24px;
     border: none;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    margin-bottom: 12px;
   }
-  .cta-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
-  .cta-sub { margin-top: 10px; font-size: 12px; color: #555; }
-  .cta-sub span { color: var(--gold); }
 
-  /* ── STICKY CTA ── */
-  .sticky-cta {
-    position: fixed; bottom: 0; left: 0; right: 0;
-    background: #0d0d0d; border-top: 1px solid var(--gold-dim);
-    padding: 12px 20px;
-    display: flex; align-items: center; justify-content: center; gap: 18px;
-    z-index: 100;
+  .btn-cta.primary {
+    background: var(--green);
+    color: var(--white);
   }
-  @media (max-width: 480px) { .sticky-cta { flex-direction: column; gap: 6px; } }
-  .sticky-price { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--gold); font-weight: 700; }
-  .sticky-label { font-size: 0.78rem; color: #444; }
-  .sticky-btn {
-    background: var(--gold); color: var(--ink); font-weight: 700;
-    font-size: 0.85rem; padding: 11px 26px; border-radius: 2px;
-    text-decoration: none; text-transform: uppercase; letter-spacing: 0.04em;
-    transition: background 0.2s;
+
+  .btn-cta.primary:hover {
+    background: var(--green-mid);
+    transform: translateY(-1px);
   }
-  .sticky-btn:hover { background: var(--gold-light); }
+
+  .btn-cta-sub {
+    font-size: 11px;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .btn-cta-sub span { color: var(--green); font-weight: 600; }
+
+  /* ── SYMPTOMS LIST ── */
+  .symptoms-list {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+
+  .symptoms-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.4;
+  }
+
+  .symptoms-list li:last-child { border-bottom: none; }
+
+  .sym-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
 
   /* ── DIVIDER ── */
-  .divider { max-width: 760px; margin: 0 auto; border: none; border-top: 1px solid #1e1e1e; }
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 20px 0;
+  }
 
-  /* ── SECTIONS ── */
-  .section { max-width: 700px; margin: 0 auto; padding: 64px 24px; }
-  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 14px; }
-  .section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 700; line-height: 1.2; color: var(--white); margin-bottom: 24px; }
-  .section h2 em { font-style: normal; color: var(--gold); }
+  /* ── FOOTER ── */
+  .quiz-footer {
+    text-align: center;
+    padding: 16px 20px;
+    font-size: 10px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    background: var(--white);
+    width: 100%;
+    margin-top: auto;
+  }
 
-  /* ── BONUS ── */
-  .bonus-list { list-style: none; margin: 20px 0; }
-  .bonus-list li { display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid #1a1a1a; }
-  .bonus-list li:last-child { border-bottom: none; }
-  .bonus-icon { font-size: 1.3rem; min-width: 30px; }
-  .bonus-text h4 { font-size: 0.93rem; font-weight: 600; color: var(--white); margin-bottom: 3px; }
-  .bonus-text p { font-size: 0.86rem; color: #666; margin: 0; }
-  .bonus-value { margin-left: auto; font-size: 0.8rem; color: var(--gold-dim); font-weight: 600; white-space: nowrap; }
-
-  /* ── TESTIMONIALS ── */
-  .testi-grid { display: grid; gap: 14px; margin: 28px 0; }
-  .tcard { background: #141414; border: 1px solid #1e1e1e; border-radius: 2px; padding: 26px; }
-  .tcard-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 10px; letter-spacing: 2px; }
-  .tcard p { color: #b0a898; font-style: italic; font-size: 0.95rem; margin-bottom: 14px; }
-  .tcard-author { font-size: 0.8rem; font-weight: 600; color: #444; letter-spacing: 0.06em; text-transform: uppercase; }
-
-  /* ── PRICE BOX ── */
-  .price-box { background: #0d0d0d; border: 1px solid var(--gold-dim); border-radius: 2px; padding: 36px; text-align: center; margin: 36px 0; }
-  .price-original { font-size: 0.88rem; color: #444; text-decoration: line-through; margin-bottom: 4px; }
-  .price-label { font-size: 0.82rem; color: #666; margin-bottom: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
-  .price-main { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 4.8rem); font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 4px; }
-  .price-note { font-size: 0.82rem; color: #444; margin-bottom: 28px; }
-  .price-stack { border-top: 1px solid #1a1a1a; padding-top: 22px; margin-top: 6px; }
-  .price-stack-title { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: #333; margin-bottom: 14px; }
-  .stack-row { display: flex; justify-content: space-between; font-size: 0.86rem; padding: 5px 0; color: #555; }
-  .stack-row span:last-child { color: #333; }
-  .stack-row.total { border-top: 1px solid #1e1e1e; margin-top: 8px; padding-top: 12px; color: #888; font-weight: 600; }
-
-  /* ── GUARANTEE ── */
-  .guarantee-box { display: flex; gap: 22px; align-items: flex-start; background: #111; border: 1px solid #1e1e1e; border-radius: 2px; padding: 28px; margin: 28px 0; }
-  @media (max-width: 480px) { .guarantee-box { flex-direction: column; } }
-  .guarantee-badge { min-width: 68px; width: 68px; height: 68px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 0.72rem; color: var(--ink); text-align: center; line-height: 1.2; flex-shrink: 0; }
-  .guarantee-text h4 { font-size: 0.97rem; font-weight: 600; color: var(--white); margin-bottom: 6px; }
-  .guarantee-text p { font-size: 0.88rem; color: #666; margin: 0; }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
+  /* ── MOBILE ── */
+  @media (max-width: 400px) {
+    .intro-stats { grid-template-columns: 1fr 1fr 1fr; }
+    .stat-num { font-size: 1.1rem; }
+    .q-card { padding: 20px 16px; }
+    .result-body { padding: 18px 16px; }
   }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  ⚠️ Tu test reveló <span>Alerta Alto</span> — Este protocolo fue creado para tu situación.
-</div>
+<!-- HEADER -->
+<header class="site-header">
+  <span>🧠 Test Cognitivo Gratuito · Dr. Alejandro Vega</span>
+</header>
 
-<!-- ALERT BANNER -->
-<div class="alert-banner">
-  <p>Precio de lanzamiento disponible solo por tiempo limitado. <strong>Después de este video, vuelve a $47.</strong></p>
-</div>
+<div class="quiz-wrap">
 
-<!-- HERO -->
-<section class="hero">
-  <div class="result-pill">🔴 Resultado: Alerta Alto</div>
-  <p class="eyebrow">Dr. Alejandro Vega · Instituto de Neurología Funcional</p>
-  <h1>Este <em>"Protocolo de la miel + 2 ingredientes naturales"</em> restaura una memoria perfecta en 21 días.</h1>
-  <p class="hero-sub">Sin medicamentos. Sin suplementos caros. Solo los tres hábitos que los superancianos aplican todos los días para mantener una memoria de acero.</p>
+  <!-- ══════════════════════════════════════
+       SCREEN 0 — INTRO
+  ══════════════════════════════════════ -->
+  <div class="screen active" id="screen-intro">
 
-  <!-- VIDEO -->
-  <div class="video-wrap" style="background:transparent;border:none;max-width:400px;">
-    <vturb-smartplayer id="vid-6a447ad8976dcbcefea46206" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
-    <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/9440c56c-927d-48cc-89b0-e7570bd455d7/players/6a447ad8976dcbcefea46206/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
-  </div>
+    <div style="margin-bottom:8px;">
+      <span class="intro-badge">⚡ Solo 2 minutos</span>
+    </div>
 
-  <div class="cta-wrap" id="cta-hero">
-    <a href="https://lukinhaecom-lab.github.io/pvquizlatam/" class="cta-btn">Quiero el Protocolo — $9.90</a>
-    <p class="cta-sub">Pago único · Acceso inmediato · <span>Garantía de 30 días</span></p>
-  </div>
-</section>
+    <h1 class="intro-headline">
+      ¿Tu cerebro está<br><em>perdiendo terreno</em> sin que lo sepas?
+    </h1>
 
-<div id="delayed-content" style="display:none;">
+    <p class="intro-sub">
+      Responde estas 10 preguntas y descubre en qué nivel de riesgo está tu memoria ahora mismo — y qué puedes hacer hoy para revertirlo.
+    </p>
 
-<hr class="divider">
+    <!-- HERO IMAGE -->
+    <div style="margin: 0 0 24px; border-radius: 16px; overflow: hidden; height: 280px;">
+      <img
+        src="quiz-hero-image.jpeg"
+        alt="Persona mayor usando su celular con claridad mental"
+        style="width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block;"
+      />
+    </div>
 
-<!-- BONUS -->
-<section class="section">
-  <p class="section-label">Incluido en tu acceso hoy</p>
-  <h2>Más de <em>$178 en valor.</em> Tuyo por $9.90.</h2>
-
-  <ul class="bonus-list">
-    <li>
-      <div class="bonus-icon">📘</div>
-      <div class="bonus-text">
-        <h4>Protocolo Mente Activa — 3 módulos completos</h4>
-        <p>Videos de 5 a 8 minutos + PDF complementario por módulo. Acceso inmediato y de por vida.</p>
+    <div class="intro-stats">
+      <div class="stat-box">
+        <span class="stat-num">10</span>
+        <span class="stat-label">preguntas rápidas</span>
       </div>
-      <span class="bonus-value">$97</span>
-    </li>
-    <li>
-      <div class="bonus-icon">🍽️</div>
-      <div class="bonus-text">
-        <h4>BONO 1 — Guía de Recetas para la Memoria</h4>
-        <p>11 recetas prácticas que integran los 3 alimentos del protocolo. Ingredientes de cualquier mercado de América Latina.</p>
+      <div class="stat-box">
+        <span class="stat-num">2'</span>
+        <span class="stat-label">para completar</span>
       </div>
-      <span class="bonus-value">$27</span>
-    </li>
-    <li>
-      <div class="bonus-icon">✅</div>
-      <div class="bonus-text">
-        <h4>BONO 2 — Lista de Control: Los 7 Hábitos del Superanciano</h4>
-        <p>Checklist diario imprimible para los 21 días. Para pegar en el refrigerador y seguir sin esfuerzo.</p>
+      <div class="stat-box">
+        <span class="stat-num">3</span>
+        <span class="stat-label">niveles de riesgo</span>
       </div>
-      <span class="bonus-value">$17</span>
-    </li>
-    <li>
-      <div class="bonus-icon">🌙</div>
-      <div class="bonus-text">
-        <h4>BONO 3 — Masterclass: Sueño y Memoria</h4>
-        <p>El ritual nocturno de 10 minutos que regenera la orexina mientras duermes — y por qué sin sueño profundo ningún protocolo alcanza su potencial.</p>
+    </div>
+
+    <button class="btn-start" onclick="startQuiz()">
+      Iniciar el test gratuito
+      <span>→</span>
+    </button>
+
+    <div class="trust-row">
+      <span class="trust-item">🔒 Sin registro</span>
+      <span class="trust-item">📊 Resultado inmediato</span>
+      <span class="trust-item">🆓 100% gratuito</span>
+    </div>
+
+  </div>
+
+  <!-- ══════════════════════════════════════
+       SCREEN 1 — QUESTIONS
+  ══════════════════════════════════════ -->
+  <div class="screen" id="screen-quiz">
+
+    <div class="progress-area">
+      <div class="progress-meta">
+        <span class="progress-label">Tu progreso</span>
+        <span class="progress-frac" id="prog-frac">1 de 10</span>
       </div>
-      <span class="bonus-value">$37</span>
-    </li>
-  </ul>
-</section>
-
-<hr class="divider">
-
-<!-- TESTIMONIALS -->
-<section class="section">
-  <p class="section-label">Resultados reales</p>
-  <h2>Lo que dicen quienes <em>ya lo aplicaron.</em></h2>
-
-  <div class="testi-grid">
-    <div class="tcard">
-      <div class="tcard-stars">★★★★★</div>
-      <p>"Pensé que era cosa de la edad y que ya no había remedio. En la segunda semana ya terminaba las conversaciones sin perder el hilo. Al mes mi hija me preguntó qué había hecho diferente. Es como si hubieran encendido una luz dentro de mi cabeza."</p>
-      <div class="tcard-author">Elena R. · 64 años · Ciudad de México</div>
+      <div class="progress-track">
+        <div class="progress-fill" id="prog-fill"></div>
+      </div>
+      <div class="brain-row" id="brain-row"></div>
     </div>
-    <div class="tcard">
-      <div class="tcard-stars">★★★★★</div>
-      <p>"Olvidaba el nombre de mis nietos. Mi esposa estaba preocupada. Después de tres semanas siguiendo el protocolo, volví a recordar cosas que creía perdidas para siempre. Ahora soy yo quien cuenta las historias en la cena."</p>
-      <div class="tcard-author">Carlos M. · 71 años · Bogotá</div>
+
+    <!-- IMAGEM DINÂMICA POR PERGUNTA -->
+    <div style="margin: 0 0 20px; border-radius: 16px; overflow: hidden; height: 220px;">
+      <img
+        id="q-image"
+        src="quiz-q1.jpeg"
+        alt="Ilustración de la pregunta"
+        style="width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; transition: opacity 0.3s ease;"
+      />
     </div>
-    <div class="tcard">
-      <div class="tcard-stars">★★★★★</div>
-      <p>"No podía terminar una conversación sin perderme en el medio. Después de 21 días la niebla desapareció. Mi razonamiento volvió. Me siento yo misma otra vez."</p>
-      <div class="tcard-author">Marta G. · 57 años · Buenos Aires</div>
+
+    <div class="q-card" id="q-card">
+      <div class="q-category" id="q-category"></div>
+      <p class="q-text" id="q-text"></p>
+      <div class="options-list" id="options-list"></div>
     </div>
-    <div class="tcard">
-      <div class="tcard-stars">★★★★★</div>
-      <p>"Comencé medio desconfiado pero en pocos días noté que mi razonamiento estaba más afilado. Recuerdo compromisos sin anotarlos y ya no me bloqueo recordando nombres."</p>
-      <div class="tcard-author">Roberto F. · 68 años · Lima</div>
+
+  </div>
+
+  <!-- ══════════════════════════════════════
+       SCREEN 2 — LOADING
+  ══════════════════════════════════════ -->
+  <div class="screen" id="screen-loading">
+    <div class="loading-screen">
+      <div class="brain-anim">🧠</div>
+      <h2 class="loading-title">Analizando tus respuestas...</h2>
+      <p class="loading-sub">Calculando tu perfil cognitivo</p>
+      <div class="loading-bar-track">
+        <div class="loading-bar-fill" id="loading-bar"></div>
+      </div>
+      <p class="loading-step" id="loading-step">Evaluando frecuencia de olvidos...</p>
     </div>
   </div>
-</section>
 
-<hr class="divider">
+  <!-- ══════════════════════════════════════
+       SCREEN 3A — RESULTADO LEVE
+  ══════════════════════════════════════ -->
+  <div class="screen" id="screen-leve">
+    <div class="result-card">
+      <div class="result-header leve">
+        <div class="result-icon">🟢</div>
+        <div class="result-badge leve">Alerta Leve</div>
+        <h2 class="result-title">Tu cerebro está bien, pero los primeros signos están apareciendo</h2>
+      </div>
+      <div class="result-body">
 
-<!-- PRICE -->
-<section class="section">
-  <p class="section-label">Tu inversión hoy</p>
-  <h2>Menos de lo que gastas en <em>un café esta semana.</em></h2>
+        <div class="result-score-row">
+          <span class="score-label">Tu puntuación</span>
+          <span class="score-val leve" id="score-leve">—</span>
+          <span class="score-max">de 30 puntos</span>
+        </div>
 
-  <p style="color:#b0a898;margin-bottom:16px;">Una consulta con un neurólogo privado cuesta entre $150 y $300 dólares. Los suplementos de memoria genéricos, entre $40 y $80 por mes sin garantía de resultado. El Protocolo Mente Activa va mucho más allá — y no te va a costar $200, ni $100, ni $50.</p>
+        <div class="score-bars">
+          <p class="score-bar-label">Nivel de riesgo cognitivo</p>
+          <div class="score-bar-track">
+            <div class="score-bar-fill leve" id="bar-leve"></div>
+          </div>
+        </div>
 
-  <div class="price-box">
-    <p class="price-original">Valor total del paquete: $178.00</p>
-    <p class="price-label">Tu precio hoy</p>
-    <div class="price-main">$9.90</div>
-    <p class="price-note">Pago único · Sin mensualidad · Acceso de por vida</p>
-    <a href="https://lukinhaecom-lab.github.io/pvquizlatam/" class="cta-btn" style="display:inline-block;margin-bottom:18px;">Quiero el Protocolo ahora — $9.90</a>
-    <div class="price-stack">
-      <p class="price-stack-title">Lo que incluye tu acceso</p>
-      <div class="stack-row"><span>Protocolo Mente Activa — 3 módulos completos</span><span>$97</span></div>
-      <div class="stack-row"><span>Bono 1 — Guía de Recetas para la Memoria</span><span>$27</span></div>
-      <div class="stack-row"><span>Bono 2 — Lista de Control 7 Hábitos</span><span>$17</span></div>
-      <div class="stack-row"><span>Bono 3 — Masterclass Sueño y Memoria</span><span>$37</span></div>
-      <div class="stack-row total"><span>Total</span><span>$178 → <strong style="color:var(--gold)">$9.90</strong></span></div>
+        <p class="result-text">
+          Tus respuestas indican que tu memoria todavía funciona bien — pero algunos patrones sugieren que los niveles de <strong>orexina</strong> en tu cerebro pueden estar comenzando a caer silenciosamente.
+        </p>
+
+        <ul class="symptoms-list">
+          <li><span class="sym-icon">⚠️</span> Olvidos ocasionales que antes no tenías</li>
+          <li><span class="sym-icon">⚠️</span> Palabras que a veces se quedan en la punta de la lengua</li>
+          <li><span class="sym-icon">⚠️</span> Pequeñas dificultades de concentración</li>
+        </ul>
+
+        <div class="result-highlight">
+          "Estás en el momento ideal para actuar. Antes de que los apagones se vuelvan frecuentes. Antes de que sea difícil revertir. El Dr. Alejandro Vega tiene un mensaje importante para ti."
+        </div>
+
+        <a href="VSL_URL?resultado=leve" class="btn-cta primary" id="cta-leve">
+          Ver el mensaje del Dr. Vega →
+        </a>
+        <p class="btn-cta-sub">Acceso gratuito · <span>Video exclusivo para tu perfil</span></p>
+
+      </div>
     </div>
   </div>
-</section>
 
-<hr class="divider">
+  <!-- ══════════════════════════════════════
+       SCREEN 3B — RESULTADO MODERADO
+  ══════════════════════════════════════ -->
+  <div class="screen" id="screen-moderado">
+    <div class="result-card">
+      <div class="result-header moderado">
+        <div class="result-icon">🟡</div>
+        <div class="result-badge moderado">Alerta Moderado</div>
+        <h2 class="result-title">Tu cerebro está enviando señales que no debes ignorar</h2>
+      </div>
+      <div class="result-body">
 
-<!-- GUARANTEE -->
-<section class="section">
-  <p class="section-label">Sin riesgo</p>
-  <h2>El riesgo es <em>completamente mío.</em></h2>
+        <div class="result-score-row">
+          <span class="score-label">Tu puntuación</span>
+          <span class="score-val moderado" id="score-moderado">—</span>
+          <span class="score-max">de 30 puntos</span>
+        </div>
 
-  <div class="guarantee-box">
-    <div class="guarantee-badge">30<br>DÍAS<br>GARANTÍA</div>
-    <div class="guarantee-text">
-      <h4>Garantía Incondicional de 30 Días</h4>
-      <p>Aplica el protocolo por 30 días. Si no sientes ninguna diferencia en tu claridad mental, en tu enfoque, en tu memoria — escríbeme y te devuelvo cada centavo. Sin preguntas, sin burocracia, sin demoras. El riesgo es enteramente mío.</p>
+        <div class="score-bars">
+          <p class="score-bar-label">Nivel de riesgo cognitivo</p>
+          <div class="score-bar-track">
+            <div class="score-bar-fill moderado" id="bar-moderado"></div>
+          </div>
+        </div>
+
+        <p class="result-text">
+          Tus respuestas muestran patrones de <strong>deficiencia de orexina</strong> que ya están afectando tu memoria y claridad mental de forma perceptible. Los apagones, la niebla mental y la dificultad para recordar nombres no son "cosas de la edad".
+        </p>
+
+        <ul class="symptoms-list">
+          <li><span class="sym-icon">🔶</span> Apagones de memoria frecuentes</li>
+          <li><span class="sym-icon">🔶</span> Niebla mental que afecta tu día a día</li>
+          <li><span class="sym-icon">🔶</span> Dificultad para seguir conversaciones largas</li>
+          <li><span class="sym-icon">🔶</span> Olvidos que otras personas ya notaron</li>
+        </ul>
+
+        <div class="result-highlight">
+          "Son síntomas de un proceso que, si no se corrige ahora, avanza. El Dr. Alejandro Vega descubrió exactamente qué está causando esto en tu caso — y qué hacer en los próximos 21 días."
+        </div>
+
+        <a href="VSL_URL?resultado=moderado" class="btn-cta primary" id="cta-moderado">
+          Ver el mensaje del Dr. Vega →
+        </a>
+        <p class="btn-cta-sub">Acceso gratuito · <span>Video exclusivo para tu perfil</span></p>
+
+      </div>
     </div>
   </div>
-</section>
 
-<hr class="divider">
+  <!-- ══════════════════════════════════════
+       SCREEN 3C — RESULTADO ALTO
+  ══════════════════════════════════════ -->
+  <div class="screen" id="screen-alto">
+    <div class="result-card">
 
-<!-- FINAL CTA -->
-<section class="section" style="text-align:center;padding-bottom:80px;">
-  <p class="section-label">Última oportunidad</p>
-  <h2>La decisión es tuya. <em>Pero tiene que ser ahora.</em></h2>
-  <p style="max-width:500px;margin:0 auto 28px;color:#555;">Imagina en 21 días despertar con la cabeza despejada. Terminar una conversación sin bloquearte. Recordar el nombre de las personas en el momento. Contar una historia de principio a fin sin perder el hilo.</p>
-  <p style="max-width:500px;margin:0 auto 36px;color:#333;font-size:0.95rem;">Puedes cerrar esta página y seguir exactamente donde estás. O puedes hacer clic abajo y empezar hoy.</p>
-  <a href="https://lukinhaecom-lab.github.io/pvquizlatam/" class="cta-btn">Quiero el Protocolo — $9.90</a>
-  <p class="cta-sub" style="margin-top:14px;">Pago único · Acceso inmediato · <span>Garantía de 30 días</span></p>
-</section>
+      <div class="result-header alto" style="border-radius: 16px 16px 0 0;">
+        <div class="result-icon">🔴</div>
+        <div class="result-badge alto">Alerta Alto</div>
+        <h2 class="result-title">Tu cerebro necesita atención urgente</h2>
+      </div>
+      <div class="result-body">
 
-</div><!-- /delayed-content -->
+        <div class="result-score-row">
+          <span class="score-label">Tu puntuación</span>
+          <span class="score-val alto" id="score-alto">—</span>
+          <span class="score-max">de 30 puntos</span>
+        </div>
 
-<script>
-  // Mostra o CTA e as seções após 180 segundos (3 minutos)
-  setTimeout(function() {
-    // Seções completas
-    var delayed = document.getElementById('delayed-content');
-    if (delayed) {
-      delayed.style.display = 'block';
-      delayed.style.animation = 'fadeIn 0.8s ease';
-    }
-  }, 180000);
-</script>
+        <div class="score-bars">
+          <p class="score-bar-label">Nivel de riesgo cognitivo</p>
+          <div class="score-bar-track">
+            <div class="score-bar-fill alto" id="bar-alto"></div>
+          </div>
+        </div>
 
-<!-- FOOTER -->
-<footer style="background:#060606;border-top:1px solid #141414;padding:36px 24px;text-align:center;">
-  <p style="font-size:0.76rem;color:#2a2a2a;max-width:580px;margin:0 auto 6px;line-height:1.6;">© 2025 Instituto de Neurología Funcional · Dr. Alejandro Vega</p>
-  <p style="font-size:0.76rem;color:#2a2a2a;max-width:580px;margin:10px auto 0;line-height:1.6;">
-    <a href="#" style="color:#333;text-decoration:none;">Política de Privacidad</a> ·
-    <a href="#" style="color:#333;text-decoration:none;">Términos de Uso</a> ·
-    <a href="#" style="color:#333;text-decoration:none;">Contacto</a>
-  </p>
-  <p style="font-size:0.76rem;color:#2a2a2a;max-width:580px;margin:18px auto 0;line-height:1.6;">Los resultados pueden variar. Este programa no reemplaza el diagnóstico ni el tratamiento médico profesional.</p>
+        <p class="result-text">
+          Tus respuestas indican un nivel significativo de <strong>deficiencia de orexina</strong>. Los síntomas que describes — apagones frecuentes, niebla mental constante, olvidos que otros ya notaron — son señales serias que no deben ignorarse.
+        </p>
+
+        <ul class="symptoms-list">
+          <li><span class="sym-icon">🔴</span> Apagones de memoria graves y frecuentes</li>
+          <li><span class="sym-icon">🔴</span> Niebla mental que limita tu funcionamiento</li>
+          <li><span class="sym-icon">🔴</span> Familiares preocupados por tu memoria</li>
+          <li><span class="sym-icon">🔴</span> Historial familiar de Alzheimer o demencia</li>
+          <li><span class="sym-icon">🔴</span> Sueño deficiente que no repara el cerebro</li>
+        </ul>
+
+        <div class="result-highlight">
+          "La buena noticia: el cerebro tiene una capacidad de recuperación notable cuando recibe los nutrientes correctos. Pero el tiempo importa. El Dr. Vega tiene un protocolo específico para situaciones como la tuya."
+        </div>
+
+        <a href="https://lukinhaecom-lab.github.io/pvquizlatam/" class="btn-cta primary" id="cta-alto">
+          Ver el protocolo del Dr. Vega — URGENTE →
+        </a>
+        <p class="btn-cta-sub">Acceso gratuito · <span>Video con protocolo para tu nivel de riesgo</span></p>
+
+      </div>
+    </div>
+  </div>
+
+</div><!-- /quiz-wrap -->
+
+<footer class="quiz-footer">
+  © 2025 Instituto de Neurología Funcional · Dr. Alejandro Vega<br>
+  Este test tiene fines informativos y no reemplaza el diagnóstico médico profesional.
 </footer>
 
+<script>
+// ── QUIZ DATA ──────────────────────────────────────────────────────────────────
+const questions = [
+  {
+    category: 'Perfil personal',
+    text: '¿Cuántos años tienes?',
+    options: [
+      { label: 'Menos de 45 años', pts: 0 },
+      { label: 'Entre 45 y 54 años', pts: 1 },
+      { label: 'Entre 55 y 64 años', pts: 2 },
+      { label: '65 años o más', pts: 3 },
+    ]
+  },
+  {
+    category: 'Memoria',
+    text: '¿Con qué frecuencia olvidas el nombre de personas que ya conoces?',
+    options: [
+      { label: 'Nunca o casi nunca', pts: 0 },
+      { label: 'De vez en cuando', pts: 1 },
+      { label: 'Con bastante frecuencia', pts: 2 },
+      { label: 'Casi todos los días', pts: 3 },
+    ]
+  },
+  {
+    category: 'Memoria',
+    text: '¿Te ha pasado ir a buscar algo a otra habitación y llegar sin recordar para qué fuiste?',
+    options: [
+      { label: 'Nunca', pts: 0 },
+      { label: 'Raramente', pts: 1 },
+      { label: 'Frecuentemente', pts: 2 },
+      { label: 'Es algo que me pasa todo el tiempo', pts: 3 },
+    ]
+  },
+  {
+    category: 'Claridad mental',
+    text: '¿Con qué frecuencia pierdes el hilo en medio de una conversación o historia que tú mismo estás contando?',
+    options: [
+      { label: 'Nunca', pts: 0 },
+      { label: 'Ocasionalmente', pts: 1 },
+      { label: 'Con frecuencia', pts: 2 },
+      { label: 'Casi siempre', pts: 3 },
+    ]
+  },
+  {
+    category: 'Claridad mental',
+    text: '¿Cómo describirías tu claridad mental en el día a día?',
+    options: [
+      { label: 'Muy clara — proceso la información rápido', pts: 0 },
+      { label: 'Bastante bien, aunque a veces me cuesta concentrarme', pts: 1 },
+      { label: 'Siento que tengo niebla mental con frecuencia', pts: 2 },
+      { label: 'Me siento lento y confundido la mayor parte del tiempo', pts: 3 },
+    ]
+  },
+  {
+    category: 'Hábitos de sueño',
+    text: '¿Cuántas horas sueles dormir por noche?',
+    options: [
+      { label: '7 a 8 horas de forma regular', pts: 0 },
+      { label: 'Entre 6 y 7 horas', pts: 1 },
+      { label: 'Menos de 6 horas', pts: 2 },
+      { label: 'Duermo muchas horas pero me despierto cansado', pts: 3 },
+    ]
+  },
+  {
+    category: 'Alimentación',
+    text: '¿Con qué frecuencia consumes pescado, huevos o alimentos ricos en omega 3?',
+    options: [
+      { label: 'Todos los días', pts: 0 },
+      { label: 'Varias veces por semana', pts: 1 },
+      { label: 'Raramente', pts: 2 },
+      { label: 'Casi nunca', pts: 3 },
+    ]
+  },
+  {
+    category: 'Percepción externa',
+    text: '¿Alguien cercano a ti ha notado que olvidas cosas con más frecuencia que antes?',
+    options: [
+      { label: 'No, nadie ha mencionado nada', pts: 0 },
+      { label: 'Alguna vez lo han insinuado', pts: 1 },
+      { label: 'Sí, me lo han dicho directamente', pts: 2 },
+      { label: 'Sí, y es motivo de preocupación en mi familia', pts: 3 },
+    ]
+  },
+  {
+    category: 'Historial familiar',
+    text: '¿Tienes familiar directo (padre, madre, abuelos) que haya sufrido Alzheimer o demencia?',
+    options: [
+      { label: 'No que yo sepa', pts: 0 },
+      { label: 'Algún familiar lejano', pts: 1 },
+      { label: 'Un familiar directo', pts: 2 },
+      { label: 'Más de un familiar directo', pts: 3 },
+    ]
+  },
+  {
+    category: 'Intentos previos',
+    text: '¿Ya has intentado algo para mejorar tu memoria — ejercicios mentales, suplementos, dietas — sin ver resultado?',
+    options: [
+      { label: 'No he intentado nada todavía', pts: 0 },
+      { label: 'He intentado algo pero sin constancia', pts: 1 },
+      { label: 'He intentado varias cosas sin resultado duradero', pts: 2 },
+      { label: 'He probado de todo y nada funcionó', pts: 3 },
+    ]
+  },
+];
+
+// ── IMAGENS POR PERGUNTA ───────────────────────────────────────────────────────
+const questionImages = [
+  'quiz-q1.jpeg',   // Q1  — Perfil/idade — Cérebro 3D
+  'quiz-q2.jpeg',   // Q2  — Esquece nomes — Mulher tentando lembrar
+  'quiz-q3.jpeg',   // Q3  — Vai buscar e esquece — Mulher na porta confusa
+  'quiz-q4.jpeg',   // Q4  — Perde o fio — Mulher travando em conversa
+  'quiz-q5.jpeg',   // Q5  — Clareza mental — Névoa mental
+  'quiz-q6.jpeg',   // Q6  — Sono — Mulher na cama cansada
+  'quiz-q7.jpeg',   // Q7  — Alimentação — Composição de alimentos
+  'quiz-q8.jpeg',   // Q8  — Família notou — Filho apoiando mãe
+  'quiz-q9.jpeg',   // Q9  — Histórico familiar — Mulher com álbum de fotos
+  'quiz-q10.jpeg',  // Q10 — Tentativas anteriores — Mulher pensativa
+];
+
+// ── STATE ──────────────────────────────────────────────────────────────────────
+let current = 0;
+let totalScore = 0;
+const letters = ['A', 'B', 'C', 'D'];
+
+// ── INIT ───────────────────────────────────────────────────────────────────────
+function buildBrainDots() {
+  const row = document.getElementById('brain-row');
+  row.innerHTML = '';
+  for (let i = 0; i < questions.length; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'brain-dot';
+    dot.id = `dot-${i}`;
+    row.appendChild(dot);
+  }
+}
+
+function startQuiz() {
+  showScreen('screen-quiz');
+  buildBrainDots();
+  renderQuestion(0);
+}
+
+// ── RENDER QUESTION ────────────────────────────────────────────────────────────
+function renderQuestion(idx) {
+  const q = questions[idx];
+  const total = questions.length;
+
+  // Sobe para o topo a cada pergunta
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Troca imagem com fade suave
+  const qImg = document.getElementById('q-image');
+  if (qImg && questionImages[idx]) {
+    qImg.style.opacity = '0';
+    setTimeout(() => {
+      qImg.src = questionImages[idx];
+      qImg.style.opacity = '1';
+    }, 150);
+  }
+
+  // Progress
+  const pct = Math.round((idx / total) * 100);
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-frac').textContent = `${idx + 1} de ${total}`;
+
+  // Brain dots
+  for (let i = 0; i < total; i++) {
+    const dot = document.getElementById(`dot-${i}`);
+    if (i < idx) dot.classList.add('lit');
+    else dot.classList.remove('lit');
+  }
+
+  // Card content
+  document.getElementById('q-category').textContent = q.category;
+  document.getElementById('q-text').textContent = q.text;
+
+  const optList = document.getElementById('options-list');
+  optList.innerHTML = '';
+
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.innerHTML = `
+      <span class="option-letter">${letters[i]}</span>
+      <span>${opt.label}</span>
+    `;
+    btn.addEventListener('click', () => selectOption(btn, opt.pts, idx));
+    optList.appendChild(btn);
+  });
+
+  // Animate card
+  const card = document.getElementById('q-card');
+  card.style.animation = 'none';
+  card.offsetHeight; // reflow
+  card.style.animation = 'slideIn 0.3s ease';
+}
+
+// ── SELECT OPTION ──────────────────────────────────────────────────────────────
+function selectOption(btn, pts, idx) {
+  // Disable all options
+  const allBtns = document.querySelectorAll('.option-btn');
+  allBtns.forEach(b => b.style.pointerEvents = 'none');
+
+  // Highlight selected
+  btn.classList.add('selected');
+
+  totalScore += pts;
+
+  setTimeout(() => {
+    if (idx + 1 < questions.length) {
+      renderQuestion(idx + 1);
+    } else {
+      showLoading();
+    }
+  }, 320);
+}
+
+// ── LOADING ────────────────────────────────────────────────────────────────────
+const loadingSteps = [
+  'Evaluando frecuencia de olvidos...',
+  'Analizando patrones de sueño...',
+  'Calculando déficit de orexina...',
+  'Evaluando historial familiar...',
+  'Preparando tu resultado personalizado...',
+];
+
+function showLoading() {
+  showScreen('screen-loading');
+  const bar = document.getElementById('loading-bar');
+  const stepEl = document.getElementById('loading-step');
+  let progress = 0;
+  let stepIdx = 0;
+
+  const interval = setInterval(() => {
+    progress += 4;
+    bar.style.width = Math.min(progress, 100) + '%';
+
+    if (progress % 20 === 0 && stepIdx < loadingSteps.length) {
+      stepEl.textContent = loadingSteps[stepIdx];
+      stepIdx++;
+    }
+
+    if (progress >= 100) {
+      clearInterval(interval);
+      setTimeout(showResult, 400);
+    }
+  }, 50);
+}
+
+// ── RESULT ─────────────────────────────────────────────────────────────────────
+function showResult() {
+  // Sempre Alerta Alto — pontuação exibida mínima de 22
+  const displayScore = Math.max(totalScore, 22);
+  const pct = Math.round((displayScore / 30) * 100);
+
+  document.getElementById('score-alto').textContent = displayScore;
+  setTimeout(() => {
+    document.getElementById('bar-alto').style.width = pct + '%';
+  }, 300);
+  showScreen('screen-alto');
+}
+
+// ── UTILS ──────────────────────────────────────────────────────────────────────
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
 </body>
 </html>
