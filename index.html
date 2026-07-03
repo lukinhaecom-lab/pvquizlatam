@@ -4,13 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Protocolo Mente Activa — Dr. Alejandro Vega</title>
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xfgzhz6pt1");
-</script>
+
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -34,26 +28,29 @@ src="https://www.facebook.com/tr?id=940128157930141&ev=PageView&noscript=1"
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --ink:        #0f0f0f;
-    --ink-soft:   #3a3a3a;
-    --ink-muted:  #6b6b6b;
-    --gold:       #c9a84c;
-    --gold-light: #f0d98a;
-    --gold-dim:   #7a6330;
-    --green:      #2d5a3d;
-    --green-light:#eaf3ed;
-    --cream:      #faf8f3;
-    --white:      #ffffff;
-    --danger:     #c0392b;
-    --border:     #e0d9c8;
+    --green:        #2D5A3D;
+    --green-mid:    #3D7A52;
+    --green-light:  #EAF3ED;
+    --green-dark:   #1E3D2A;
+    --gold:         #C9A84C;
+    --gold-light:   #FDF6E3;
+    --gold-dim:     #7A6330;
+    --cream:        #FAFAF5;
+    --white:        #FFFFFF;
+    --ink:          #1A1A1A;
+    --ink-soft:     #3D3D3D;
+    --muted:        #6B6B6B;
+    --border:       #E2DDD4;
+    --danger:       #C0392B;
+    --surface:      #F3F0E8;
   }
 
   html { scroll-behavior: smooth; }
 
   body {
     font-family: 'Inter', sans-serif;
-    background: var(--ink);
-    color: var(--white);
+    background: var(--cream);
+    color: var(--ink);
     font-size: 17px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
@@ -61,29 +58,31 @@ src="https://www.facebook.com/tr?id=940128157930141&ev=PageView&noscript=1"
 
   /* ── TOP BAR ── */
   .topbar {
-    background: var(--danger);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
     text-align: center;
     padding: 10px 20px;
     font-size: 13px;
     font-weight: 600;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
+    color: var(--green);
   }
-  .topbar span { color: var(--gold-light); }
+  .topbar span { color: var(--gold-dim); }
 
   /* ── ALERT BANNER ── */
   .alert-banner {
-    background: #1a0a00;
-    border-bottom: 1px solid var(--gold-dim);
-    padding: 14px 20px;
+    background: var(--gold-light);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 20px;
     text-align: center;
   }
-  .alert-banner p { font-size: 13px; color: #c9a060; margin: 0; }
-  .alert-banner strong { color: var(--gold); }
+  .alert-banner p { font-size: 13px; color: var(--gold-dim); margin: 0; font-weight: 600; }
+  .alert-banner strong { color: var(--green); }
 
   /* ── HERO ── */
   .hero {
-    background: var(--ink);
+    background: var(--green-dark);
     padding: 52px 20px 0;
     text-align: center;
   }
@@ -92,7 +91,7 @@ src="https://www.facebook.com/tr?id=940128157930141&ev=PageView&noscript=1"
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #1a0000;
+    background: rgba(192,57,43,0.15);
     border: 1px solid var(--danger);
     color: #e07070;
     font-size: 12px;
@@ -126,7 +125,7 @@ src="https://www.facebook.com/tr?id=940128157930141&ev=PageView&noscript=1"
 
   .hero-sub {
     font-size: clamp(1rem, 2vw, 1.15rem);
-    color: #b0a898;
+    color: #c8d8cc;
     max-width: 580px;
     margin: 0 auto 32px;
     line-height: 1.6;
@@ -136,41 +135,14 @@ src="https://www.facebook.com/tr?id=940128157930141&ev=PageView&noscript=1"
   .video-wrap {
     max-width: 760px;
     margin: 0 auto;
-    background: #1a1a1a;
-    border: 1px solid #2e2e2e;
+    background: transparent;
+    border: none;
     border-radius: 4px;
     overflow: hidden;
   }
-  .video-placeholder {
-    aspect-ratio: 16/9;
-    background: #111;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    color: #555;
-    font-size: 13px;
-    letter-spacing: 0.05em;
-  }
-  .play-icon {
-    width: 60px; height: 60px;
-    border-radius: 50%;
-    background: var(--gold);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .play-icon svg { fill: var(--ink); margin-left: 4px; }
-  .video-label {
-    background: #1a1a1a;
-    padding: 10px 20px;
-    font-size: 11px;
-    color: #555;
-    text-align: center;
-    letter-spacing: 0.04em;
-  }
 
   /* ── CTA ── */
-  .cta-wrap { text-align: center; padding: 36px 20px; }
+  .cta-wrap { text-align: center; padding: 36px 20px; background: var(--green-dark); }
   .cta-btn {
     display: inline-block;
     background: var(--gold);
@@ -180,79 +152,130 @@ src="https://www.facebook.com/tr?id=940128157930141&ev=PageView&noscript=1"
     font-weight: 700;
     letter-spacing: 0.02em;
     padding: 18px 44px;
-    border-radius: 2px;
+    border-radius: 8px;
     text-decoration: none;
     text-transform: uppercase;
     transition: background 0.2s, transform 0.15s;
     border: none;
     cursor: pointer;
+    box-shadow: 0 4px 16px rgba(201,168,76,0.3);
   }
-  .cta-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
-  .cta-sub { margin-top: 10px; font-size: 12px; color: #555; }
+  .cta-btn:hover { background: #d4b45a; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,0.4); }
+  .cta-sub { margin-top: 10px; font-size: 12px; color: #8aaa95; }
   .cta-sub span { color: var(--gold); }
 
-  /* ── STICKY CTA ── */
-  .sticky-cta {
-    position: fixed; bottom: 0; left: 0; right: 0;
-    background: #0d0d0d; border-top: 1px solid var(--gold-dim);
-    padding: 12px 20px;
-    display: flex; align-items: center; justify-content: center; gap: 18px;
-    z-index: 100;
-  }
-  @media (max-width: 480px) { .sticky-cta { flex-direction: column; gap: 6px; } }
-  .sticky-price { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--gold); font-weight: 700; }
-  .sticky-label { font-size: 0.78rem; color: #444; }
-  .sticky-btn {
-    background: var(--gold); color: var(--ink); font-weight: 700;
-    font-size: 0.85rem; padding: 11px 26px; border-radius: 2px;
-    text-decoration: none; text-transform: uppercase; letter-spacing: 0.04em;
-    transition: background 0.2s;
-  }
-  .sticky-btn:hover { background: var(--gold-light); }
-
   /* ── DIVIDER ── */
-  .divider { max-width: 760px; margin: 0 auto; border: none; border-top: 1px solid #1e1e1e; }
+  .divider { max-width: 760px; margin: 0 auto; border: none; border-top: 1px solid var(--border); }
 
   /* ── SECTIONS ── */
   .section { max-width: 700px; margin: 0 auto; padding: 64px 24px; }
-  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 14px; }
-  .section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 700; line-height: 1.2; color: var(--white); margin-bottom: 24px; }
-  .section h2 em { font-style: normal; color: var(--gold); }
+  .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--green); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 20px; height: 2px;
+    background: var(--green); border-radius: 1px;
+  }
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    font-weight: 700; line-height: 1.2;
+    color: var(--ink); margin-bottom: 24px;
+  }
+  .section h2 em { font-style: normal; color: var(--green); }
+  .section p { color: var(--ink-soft); margin-bottom: 16px; font-size: 1rem; }
+  .section p strong { color: var(--ink); font-weight: 600; }
 
-  /* ── BONUS ── */
-  .bonus-list { list-style: none; margin: 20px 0; }
-  .bonus-list li { display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid #1a1a1a; }
-  .bonus-list li:last-child { border-bottom: none; }
-  .bonus-icon { font-size: 1.3rem; min-width: 30px; }
-  .bonus-text h4 { font-size: 0.93rem; font-weight: 600; color: var(--white); margin-bottom: 3px; }
-  .bonus-text p { font-size: 0.86rem; color: #666; margin: 0; }
-  .bonus-value { margin-left: auto; font-size: 0.8rem; color: var(--gold-dim); font-weight: 600; white-space: nowrap; }
+  /* ── BONUS CARDS ── */
+  .bonus-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 14px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s;
+  }
+  .bonus-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .bonus-card-label {
+    font-size: 10px; font-weight: 700; color: var(--green);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px;
+  }
+  .bonus-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
+  .bonus-card p { font-size: 0.84rem; color: var(--muted); margin: 0 0 8px; }
+  .bonus-card-value { font-size: 0.8rem; font-weight: 700; color: var(--gold-dim); }
 
   /* ── TESTIMONIALS ── */
   .testi-grid { display: grid; gap: 14px; margin: 28px 0; }
-  .tcard { background: #141414; border: 1px solid #1e1e1e; border-radius: 2px; padding: 26px; }
-  .tcard-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 10px; letter-spacing: 2px; }
-  .tcard p { color: #b0a898; font-style: italic; font-size: 0.95rem; margin-bottom: 14px; }
-  .tcard-author { font-size: 0.8rem; font-weight: 600; color: #444; letter-spacing: 0.06em; text-transform: uppercase; }
+  .tcard {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .tcard-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0; letter-spacing: 2px; }
+  .tcard p { color: var(--ink-soft); font-style: italic; font-size: 0.95rem; margin-bottom: 0; line-height: 1.6; }
 
   /* ── PRICE BOX ── */
-  .price-box { background: #0d0d0d; border: 1px solid var(--gold-dim); border-radius: 2px; padding: 36px; text-align: center; margin: 36px 0; }
-  .price-original { font-size: 0.88rem; color: #444; text-decoration: line-through; margin-bottom: 4px; }
-  .price-label { font-size: 0.82rem; color: #666; margin-bottom: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
-  .price-main { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 4.8rem); font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 4px; }
-  .price-note { font-size: 0.82rem; color: #444; margin-bottom: 28px; }
-  .price-stack { border-top: 1px solid #1a1a1a; padding-top: 22px; margin-top: 6px; }
-  .price-stack-title { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: #333; margin-bottom: 14px; }
-  .stack-row { display: flex; justify-content: space-between; font-size: 0.86rem; padding: 5px 0; color: #555; }
-  .stack-row span:last-child { color: #333; }
-  .stack-row.total { border-top: 1px solid #1e1e1e; margin-top: 8px; padding-top: 12px; color: #888; font-weight: 600; }
+  .price-box {
+    background: var(--green);
+    border-radius: 16px;
+    padding: 36px;
+    text-align: center;
+    margin: 36px 0;
+    box-shadow: 0 8px 32px rgba(45,90,61,0.2);
+  }
+  .price-original { font-size: 0.88rem; color: #8aaa95; text-decoration: line-through; margin-bottom: 4px; }
+  .price-label { font-size: 0.82rem; color: #8aaa95; margin-bottom: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .price-main {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 4.8rem);
+    font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 4px;
+  }
+  .price-note { font-size: 0.82rem; color: #8aaa95; margin-bottom: 28px; }
+  .price-stack { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 22px; margin-top: 6px; }
+  .price-stack-title { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8aaa95; margin-bottom: 14px; }
+  .stack-row { display: flex; justify-content: space-between; font-size: 0.86rem; padding: 5px 0; color: #c8d8cc; }
+  .stack-row span:last-child { color: var(--gold); }
+  .stack-row.total { border-top: 1px solid rgba(255,255,255,0.15); margin-top: 8px; padding-top: 12px; color: var(--white); font-weight: 600; }
 
   /* ── GUARANTEE ── */
-  .guarantee-box { display: flex; gap: 22px; align-items: flex-start; background: #111; border: 1px solid #1e1e1e; border-radius: 2px; padding: 28px; margin: 28px 0; }
+  .guarantee-box {
+    display: flex; gap: 22px; align-items: flex-start;
+    background: var(--green-light);
+    border: 1px solid var(--green);
+    border-radius: 12px; padding: 28px; margin: 28px 0;
+  }
   @media (max-width: 480px) { .guarantee-box { flex-direction: column; } }
-  .guarantee-badge { min-width: 68px; width: 68px; height: 68px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 0.72rem; color: var(--ink); text-align: center; line-height: 1.2; flex-shrink: 0; }
-  .guarantee-text h4 { font-size: 0.97rem; font-weight: 600; color: var(--white); margin-bottom: 6px; }
-  .guarantee-text p { font-size: 0.88rem; color: #666; margin: 0; }
+  .guarantee-badge {
+    min-width: 68px; width: 68px; height: 68px;
+    background: var(--green); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-weight: 900;
+    font-size: 0.72rem; color: var(--white); text-align: center; line-height: 1.2; flex-shrink: 0;
+  }
+  .guarantee-text h4 { font-size: 0.97rem; font-weight: 700; color: var(--green-dark); margin-bottom: 6px; }
+  .guarantee-text p { font-size: 0.88rem; color: var(--ink-soft); margin: 0; }
+
+  /* ── FINAL CTA SECTION ── */
+  .final-cta-section {
+    background: var(--green-dark);
+    padding: 64px 24px 80px;
+    text-align: center;
+  }
+  .final-cta-section .section-label { color: var(--gold); justify-content: center; }
+  .final-cta-section .section-label::before { background: var(--gold); }
+  .final-cta-section h2 { color: var(--white); }
+  .final-cta-section h2 em { color: var(--gold); }
+  .final-cta-section p { color: #c8d8cc; }
 
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(16px); }
@@ -267,10 +290,7 @@ src="https://www.facebook.com/tr?id=940128157930141&ev=PageView&noscript=1"
   ⚠️ Tu test reveló <span>Alerta Alto</span> — Este protocolo fue creado para tu situación.
 </div>
 
-<!-- ALERT BANNER -->
-<div class="alert-banner">
-  <p>Precio de lanzamiento disponible solo por tiempo limitado. <strong>Después de este video, vuelve a $47.</strong></p>
-</div>
+
 
 <!-- HERO -->
 <section class="hero">
@@ -291,7 +311,7 @@ src="https://www.facebook.com/tr?id=940128157930141&ev=PageView&noscript=1"
   </div>
 </section>
 
-<div id="delayed-content" style="display:none;">
+<div id="delayed-content">
 
 <hr class="divider">
 
@@ -300,40 +320,50 @@ src="https://www.facebook.com/tr?id=940128157930141&ev=PageView&noscript=1"
   <p class="section-label">Incluido en tu acceso hoy</p>
   <h2>Más de <em>$178 en valor.</em> Tuyo por $9.90.</h2>
 
-  <ul class="bonus-list">
-    <li>
-      <div class="bonus-icon">📘</div>
-      <div class="bonus-text">
-        <h4>Protocolo Mente Activa — 3 módulos completos</h4>
-        <p>Videos de 5 a 8 minutos + PDF complementario por módulo. Acceso inmediato y de por vida.</p>
-      </div>
-      <span class="bonus-value">$97</span>
-    </li>
-    <li>
-      <div class="bonus-icon">🍽️</div>
-      <div class="bonus-text">
-        <h4>BONO 1 — Guía de Recetas para la Memoria</h4>
-        <p>11 recetas prácticas que integran los 3 alimentos del protocolo. Ingredientes de cualquier mercado de América Latina.</p>
-      </div>
-      <span class="bonus-value">$27</span>
-    </li>
-    <li>
-      <div class="bonus-icon">✅</div>
-      <div class="bonus-text">
-        <h4>BONO 2 — Lista de Control: Los 7 Hábitos del Superanciano</h4>
-        <p>Checklist diario imprimible para los 21 días. Para pegar en el refrigerador y seguir sin esfuerzo.</p>
-      </div>
-      <span class="bonus-value">$17</span>
-    </li>
-    <li>
-      <div class="bonus-icon">🌙</div>
-      <div class="bonus-text">
-        <h4>BONO 3 — Masterclass: Sueño y Memoria</h4>
-        <p>El ritual nocturno de 10 minutos que regenera la orexina mientras duermes — y por qué sin sueño profundo ningún protocolo alcanza su potencial.</p>
-      </div>
-      <span class="bonus-value">$37</span>
-    </li>
-  </ul>
+  <!-- PRODUTO PRINCIPAL -->
+  <div class="bonus-card">
+    <img src="bonus-main.png" alt="Protocolo Mente Activa" style="width:120px;height:auto;flex-shrink:0;border-radius:8px;"/>
+    <div style="flex:1;">
+      <div class="bonus-card-label">Programa principal</div>
+      <h4 class="bonus-card-h4" style="font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:5px;">Protocolo Mente Activa — 3 módulos completos</h4>
+      <p class="bonus-card-p" style="font-size:0.84rem;color:var(--muted);margin:0 0 8px;">Videos de 5 a 8 minutos + PDF complementario por módulo. Acceso inmediato y de por vida.</p>
+      <span class="bonus-card-value">Valor: $97</span>
+    </div>
+  </div>
+
+  <!-- BONUS 1 -->
+  <div class="bonus-card">
+    <img src="bonus-1.png" alt="Guía de Recetas para la Memoria" style="width:90px;height:auto;flex-shrink:0;border-radius:8px;"/>
+    <div style="flex:1;">
+      <div class="bonus-card-label">Bono 1</div>
+      <h4 style="font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:5px;">Guía de Recetas para la Memoria</h4>
+      <p style="font-size:0.84rem;color:var(--muted);margin:0 0 8px;">11 recetas prácticas que integran los 3 alimentos del protocolo. Ingredientes de cualquier mercado de América Latina.</p>
+      <span class="bonus-card-value">Valor: $27</span>
+    </div>
+  </div>
+
+  <!-- BONUS 2 -->
+  <div class="bonus-card">
+    <img src="bonus-2.png" alt="Los 7 Hábitos del Superanciano" style="width:90px;height:auto;flex-shrink:0;border-radius:8px;"/>
+    <div style="flex:1;">
+      <div class="bonus-card-label">Bono 2</div>
+      <h4 style="font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:5px;">Lista de Control: Los 7 Hábitos del Superanciano</h4>
+      <p style="font-size:0.84rem;color:var(--muted);margin:0 0 8px;">Checklist diario imprimible para los 21 días. Para pegar en el refrigerador y seguir sin esfuerzo.</p>
+      <span class="bonus-card-value">Valor: $17</span>
+    </div>
+  </div>
+
+  <!-- BONUS 3 -->
+  <div class="bonus-card">
+    <img src="bonus-3.png" alt="Masterclass Sueño y Memoria" style="width:90px;height:auto;flex-shrink:0;border-radius:8px;"/>
+    <div style="flex:1;">
+      <div class="bonus-card-label">Bono 3</div>
+      <h4 style="font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:5px;">Masterclass: Sueño y Memoria</h4>
+      <p style="font-size:0.84rem;color:var(--muted);margin:0 0 8px;">El ritual nocturno de 10 minutos que regenera la orexina mientras duermes — y por qué sin sueño profundo ningún protocolo alcanza su potencial.</p>
+      <span class="bonus-card-value">Valor: $37</span>
+    </div>
+  </div>
+
 </section>
 
 <hr class="divider">
@@ -345,24 +375,51 @@ src="https://www.facebook.com/tr?id=940128157930141&ev=PageView&noscript=1"
 
   <div class="testi-grid">
     <div class="tcard">
-      <div class="tcard-stars">★★★★★</div>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+        <img src="persona-1.png" alt="Elena R." style="width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:2px solid var(--gold-dim);"/>
+        <div>
+          <div style="font-size:0.82rem;font-weight:700;color:var(--white);">Elena R.</div>
+          <div style="font-size:0.76rem;color:var(--muted);">64 años · Ciudad de México</div>
+          <div class="tcard-stars" style="margin-bottom:0;margin-top:3px;">★★★★★</div>
+        </div>
+      </div>
       <p>"Pensé que era cosa de la edad y que ya no había remedio. En la segunda semana ya terminaba las conversaciones sin perder el hilo. Al mes mi hija me preguntó qué había hecho diferente. Es como si hubieran encendido una luz dentro de mi cabeza."</p>
-      <div class="tcard-author">Elena R. · 64 años · Ciudad de México</div>
     </div>
+
     <div class="tcard">
-      <div class="tcard-stars">★★★★★</div>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+        <img src="persona-2.png" alt="Carlos M." style="width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:2px solid var(--gold-dim);"/>
+        <div>
+          <div style="font-size:0.82rem;font-weight:700;color:var(--white);">Carlos M.</div>
+          <div style="font-size:0.76rem;color:var(--muted);">71 años · Bogotá</div>
+          <div class="tcard-stars" style="margin-bottom:0;margin-top:3px;">★★★★★</div>
+        </div>
+      </div>
       <p>"Olvidaba el nombre de mis nietos. Mi esposa estaba preocupada. Después de tres semanas siguiendo el protocolo, volví a recordar cosas que creía perdidas para siempre. Ahora soy yo quien cuenta las historias en la cena."</p>
-      <div class="tcard-author">Carlos M. · 71 años · Bogotá</div>
     </div>
+
     <div class="tcard">
-      <div class="tcard-stars">★★★★★</div>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+        <img src="persona-3.png" alt="Marta G." style="width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:2px solid var(--gold-dim);"/>
+        <div>
+          <div style="font-size:0.82rem;font-weight:700;color:var(--white);">Marta G.</div>
+          <div style="font-size:0.76rem;color:var(--muted);">57 años · Buenos Aires</div>
+          <div class="tcard-stars" style="margin-bottom:0;margin-top:3px;">★★★★★</div>
+        </div>
+      </div>
       <p>"No podía terminar una conversación sin perderme en el medio. Después de 21 días la niebla desapareció. Mi razonamiento volvió. Me siento yo misma otra vez."</p>
-      <div class="tcard-author">Marta G. · 57 años · Buenos Aires</div>
     </div>
+
     <div class="tcard">
-      <div class="tcard-stars">★★★★★</div>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+        <img src="persona-4.png" alt="Roberto F." style="width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:2px solid var(--gold-dim);"/>
+        <div>
+          <div style="font-size:0.82rem;font-weight:700;color:var(--white);">Roberto F.</div>
+          <div style="font-size:0.76rem;color:var(--muted);">68 años · Lima</div>
+          <div class="tcard-stars" style="margin-bottom:0;margin-top:3px;">★★★★★</div>
+        </div>
+      </div>
       <p>"Comencé medio desconfiado pero en pocos días noté que mi razonamiento estaba más afilado. Recuerdo compromisos sin anotarlos y ya no me bloqueo recordando nombres."</p>
-      <div class="tcard-author">Roberto F. · 68 años · Lima</div>
     </div>
   </div>
 </section>
@@ -374,9 +431,10 @@ src="https://www.facebook.com/tr?id=940128157930141&ev=PageView&noscript=1"
   <p class="section-label">Tu inversión hoy</p>
   <h2>Menos de lo que gastas en <em>un café esta semana.</em></h2>
 
-  <p style="color:#b0a898;margin-bottom:16px;">Una consulta con un neurólogo privado cuesta entre $150 y $300 dólares. Los suplementos de memoria genéricos, entre $40 y $80 por mes sin garantía de resultado. El Protocolo Mente Activa va mucho más allá — y no te va a costar $200, ni $100, ni $50.</p>
+  <p style="color:var(--ink-soft);margin-bottom:16px;">Una consulta con un neurólogo privado cuesta entre $150 y $300 dólares. Los suplementos de memoria genéricos, entre $40 y $80 por mes sin garantía de resultado. El Protocolo Mente Activa va mucho más allá — y no te va a costar $200, ni $100, ni $50.</p>
 
   <div class="price-box">
+    <img src="mockup-completo.png" alt="Protocolo Mente Activa — Contenido completo" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto 24px;"/>
     <p class="price-original">Valor total del paquete: $178.00</p>
     <p class="price-label">Tu precio hoy</p>
     <div class="price-main">$9.90</div>
@@ -412,28 +470,20 @@ src="https://www.facebook.com/tr?id=940128157930141&ev=PageView&noscript=1"
 <hr class="divider">
 
 <!-- FINAL CTA -->
-<section class="section" style="text-align:center;padding-bottom:80px;">
-  <p class="section-label">Última oportunidad</p>
-  <h2>La decisión es tuya. <em>Pero tiene que ser ahora.</em></h2>
-  <p style="max-width:500px;margin:0 auto 28px;color:#555;">Imagina en 21 días despertar con la cabeza despejada. Terminar una conversación sin bloquearte. Recordar el nombre de las personas en el momento. Contar una historia de principio a fin sin perder el hilo.</p>
-  <p style="max-width:500px;margin:0 auto 36px;color:#333;font-size:0.95rem;">Puedes cerrar esta página y seguir exactamente donde estás. O puedes hacer clic abajo y empezar hoy.</p>
-  <a href="https://go.centerpag.com/PPU38CQDMKM" class="cta-btn">Quiero el Protocolo — $9.90</a>
-  <p class="cta-sub" style="margin-top:14px;">Pago único · Acceso inmediato · <span>Garantía de 30 días</span></p>
-</section>
+<div class="final-cta-section">
+  <div style="max-width:700px;margin:0 auto;">
+    <p class="section-label" style="justify-content:center;">Última oportunidad</p>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;line-height:1.2;color:var(--white);margin-bottom:24px;">La decisión es tuya. <em style="font-style:normal;color:var(--gold);">Pero tiene que ser ahora.</em></h2>
+    <p style="max-width:500px;margin:0 auto 28px;color:#c8d8cc;">Imagina en 21 días despertar con la cabeza despejada. Terminar una conversación sin bloquearte. Recordar el nombre de las personas en el momento. Contar una historia de principio a fin sin perder el hilo.</p>
+    <p style="max-width:500px;margin:0 auto 36px;color:#8aaa95;font-size:0.95rem;">Puedes cerrar esta página y seguir exactamente donde estás. O puedes hacer clic abajo y empezar hoy.</p>
+    <a href="https://go.centerpag.com/PPU38CQDMKM" class="cta-btn">Quiero el Protocolo — $9.90</a>
+    <p class="cta-sub" style="margin-top:14px;">Pago único · Acceso inmediato · <span>Garantía de 30 días</span></p>
+  </div>
+</div>
 
 </div><!-- /delayed-content -->
 
-<script>
-  // Mostra o CTA e as seções após 180 segundos (3 minutos)
-  setTimeout(function() {
-    // Seções completas
-    var delayed = document.getElementById('delayed-content');
-    if (delayed) {
-      delayed.style.display = 'block';
-      delayed.style.animation = 'fadeIn 0.8s ease';
-    }
-  }, 180000);
-</script>
+
 
 <!-- FOOTER -->
 <footer style="background:#060606;border-top:1px solid #141414;padding:36px 24px;text-align:center;">
