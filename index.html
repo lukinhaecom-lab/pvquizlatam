@@ -311,7 +311,7 @@ src="https://www.facebook.com/tr?id=940128157930141&ev=PageView&noscript=1"
   </div>
 </section>
 
-<div id="delayed-content">
+<div id="delayed-content" style="display:none;">
 
 <hr class="divider">
 
@@ -482,6 +482,16 @@ src="https://www.facebook.com/tr?id=940128157930141&ev=PageView&noscript=1"
 </div>
 
 </div><!-- /delayed-content -->
+
+<script>
+  setTimeout(function() {
+    var delayed = document.getElementById('delayed-content');
+    if (delayed) {
+      delayed.style.display = 'block';
+      delayed.style.animation = 'fadeIn 0.8s ease';
+    }
+  }, 180000);
+</script>
 
 
 
